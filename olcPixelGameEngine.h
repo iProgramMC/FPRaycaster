@@ -1,4 +1,6 @@
-﻿/*
+// Patched version of the olcPixelGameEngine by iProgramInCpp which allows hiding of the cursor.
+// See lines 1446 and 2889 for details.
+/*
 	olcPixelGameEngine.h
 
 	+-------------------------------------------------------------+
