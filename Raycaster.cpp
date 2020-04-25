@@ -70,12 +70,12 @@ double sample(int min, int max, double degree) {
 	return min + (max - min) * degree;
 }
 
-void Raycaster::Raycaster()
+Raycaster::Raycaster()
 {
 	// Name you application
 	sAppName = "Raycaster Test";
 }
-void Raycaster::~Raycaster() 
+Raycaster::~Raycaster() 
 {
 	delete wall_sprite;
 	delete tree_sprite;
