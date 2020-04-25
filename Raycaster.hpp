@@ -11,6 +11,13 @@ extern double* depthBuffer;
 extern int mapWidth, mapHeight;
 // include end character too
 extern char map[];
+
+char GetTile(int x, int y);
+void SetTile(int x, int y, char c);
+bool CanRemove(char c);
+bool GetCollisionType(char c);
+double sample(int min, int max, double degree);
+
 // Override base class with your custom functionality
 class Raycaster : public olc::PixelGameEngine
 {
@@ -24,11 +31,7 @@ class Raycaster : public olc::PixelGameEngine
 	olc::Sprite* xhairSprite;
 	olc::Sprite* brockSprite;
 public:
-	Raycaster()
-	{
-		// Name you application
-		sAppName = "Raycaster Test";
-	}
+	Raycaster();
 
 public:
 	bool OnUserCreate() override;
