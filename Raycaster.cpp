@@ -197,33 +197,6 @@ bool Raycaster::OnUserUpdate(float fElapsedTime)
 				playerY += mx;
 			}
 		}
-
-		if (GetMouse(0).bPressed) {
-			// find block in front of us
-			double rayAngle = playerAngle;
-			double distToWall = 0.0;
-			bool hitWall = false;
-			char wallHit = '.';
-			double eyeX = sinf((float)rayAngle), eyeY = cosf((float)rayAngle);
-			bool boundary = false;
-			double sampleX = 0.0;
-			int tileSX = -1, tileSY = -1;
-			while (!hitWall && distToWall < playerRange) {
-				distToWall += 0.01;
-				int testX = (int)(playerX + eyeX * distToWall);
-				int testY = (int)(playerY + eyeY * distToWall);
-				char tileGot = GetTile(testX, testY);
-				if (tileGot != '.') {
-					tileSX = testX;
-					tileSY = testY;
-					hitWall = true;
-					wallHit = tileGot;
-				}
-			}
-			if (CanRemove(GetTile(tileSX, tileSY))) {
-				SetTile(tileSX, tileSY, '.');
-			}
-		}
 	}
 
 	for (int x = 0; x < sWidth; x++)
