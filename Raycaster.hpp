@@ -32,6 +32,7 @@ class Raycaster : public olc::PixelGameEngine
 	olc::Sprite* brockSprite;
 public:
 	Raycaster();
+	~Raycaster();
 
 public:
 	bool OnUserCreate() override;
