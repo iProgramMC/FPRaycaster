@@ -70,6 +70,23 @@ double sample(int min, int max, double degree) {
 	return min + (max - min) * degree;
 }
 
+void Raycaster::Raycaster()
+{
+	// Name you application
+	sAppName = "Raycaster Test";
+}
+void Raycaster::~Raycaster() 
+{
+	delete wall_sprite;
+	delete tree_sprite;
+	delete _box_sprite;
+	delete bush_sprite;
+	delete _unk_sprite;
+	delete dirt_sprite;
+	delete brockSprite;
+	delete xhairSprite;
+	delete[] depthBuffer;
+}
 bool Raycaster::OnUserCreate() {
 
 	wall_sprite = new olc::Sprite("bricks.png");
